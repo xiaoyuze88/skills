@@ -1,0 +1,14 @@
+{
+  "name": "my-skills",
+  "description": "Personal Claude Code workflow skills",
+  "owner": {
+    "name": "vinsonxiao"
+  },
+  "plugins": [
+    {
+      "name": "my-skills",
+      "source": "./plugins/workflow-skills",
+      "description": "are-you-sure / handoff-supervise / session-close-check"
+    }
+  ]
+}
