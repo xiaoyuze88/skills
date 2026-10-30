@@ -1,6 +1,6 @@
 ---
 name: handoff-supervise
-description: 给 /handoff 读的补充 prompt——按开工即 AFK 语义在交接文档里交代 supervisor 协作方式（疑问先问 supervisor；产品策略维度与需人类授权的动作才停等人类），并把本 session 转为 supervisor。支持后台 supervisor（/background）；读项目 .claude/workflow.md 的 handoff: 指向的项目规范并内联进交接文档；缺失时横幅 + 模板 + 通用兜底。用法：/handoff 读 /handoff-supervise 并按其执行
+description: 给 /handoff 读的补充 prompt——按开工即 AFK 语义在交接文档里交代 supervisor 协作方式（疑问先问 supervisor；产品策略维度与需人类授权的动作才停等人类），并把本 session 转为 supervisor。支持后台 supervisor（/background）；读项目 .claude/workflow.md 的 handoff: 指向的项目规范并内联进交接文档；缺失时横幅 + 模板 + 通用兜底。用法：/handoff 读 /my-skills:handoff-supervise 并按其执行
 disable-model-invocation: true
 ---
 
@@ -14,7 +14,7 @@ disable-model-invocation: true
 2. 找到 `handoff:` 行，取值即 init source（相对项目根的路径）。读出该文件，按其要求写交接文档。
 3. 缺失 / 无 `handoff:` 键 / 目标文件读不到 → 走「通用兜底」，并在交接文档里注明「项目未初始化 handoff 规则」。
 4. 交接文档顶部固定打印一行：`init source: <路径>` 或 `init source: (fallback: generic)`。
-5. 若 supervisor 已 `/background`（或准备后台运行），再读 `~/.claude/skills/handoff-supervise/references/background-supervisor.md`（若不存在，读本 SKILL.md 同目录 `references/background-supervisor.md`）并按其执行；非 bg 不读。
+5. 若 supervisor 已 `/background`（或准备后台运行），再读本 skill 目录下的 `references/background-supervisor.md`（插件加载时可从 `${CLAUDE_PLUGIN_ROOT}/skills/handoff-supervise/references/background-supervisor.md` 定位；读不到则走通用兜底）并按其执行；非 bg 不读。
 
 ## 写交接文档
 

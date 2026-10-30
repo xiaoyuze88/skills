@@ -1,6 +1,6 @@
 # 后台 supervisor（通用机制）
 
-**只由 `handoff-supervise` 在 supervisor 已 `/background`（或准备后台运行）时读取。** 本文件是通用机制；项目专属交接字段、tracker、AFK 路由仍以项目 `handoff.md` 为准。
+**只由 `my-skills:handoff-supervise` 在 supervisor 已 `/background`（或准备后台运行）时读取。** 本文件是通用机制；项目专属交接字段、tracker、AFK 路由仍以项目 `handoff.md` 为准。
 
 ## 生命周期
 
